@@ -1,4 +1,5 @@
 import { noAngular } from './rules/no-angular.js';
+import { noReactNamespace } from './rules/no-react-namespace.js';
 
 /**
  * @type {import('eslint').ESLint.Plugin}
@@ -11,5 +12,6 @@ export const betterCode = {
 	},
 	rules: {
 		'no-angular': noAngular,
+		'no-react-namespace': noReactNamespace,
 	},
 };

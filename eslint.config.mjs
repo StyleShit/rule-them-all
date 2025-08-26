@@ -9,9 +9,9 @@ export default defineConfig([
 			js,
 			'better-code': betterCode,
 		},
-		extends: ['js/recommended'],
 		rules: {
 			'better-code/no-angular': 'error',
+			'better-code/no-react-namespace': 'error',
 		},
 	},
 ]);
