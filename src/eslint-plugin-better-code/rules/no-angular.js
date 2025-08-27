@@ -9,13 +9,6 @@ export const noAngular = {
 		},
 	},
 	create(context) {
-		return {
-			'Identifier[name="angular"]'(node) {
-				context.report({
-					node,
-					message: 'Naming something "angular" is not allowed.',
-				});
-			},
-		};
+		return {};
 	},
 };

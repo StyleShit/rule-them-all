@@ -1,0 +1,47 @@
+{
+	"e01-report-angular": {
+		"prefix": "e01-report-angular",
+		"body": [
+			"context.report({",
+			"\tnode,",
+			"\tmessage: 'Naming something \"angular\" is not allowed.',",
+			"});",
+		],
+	},
+	"e02-report-react-namespace": {
+		"prefix": "e02-report-react-namespace",
+		"body": [
+			"context.report({",
+			"\tnode,",
+			"\tmessage: 'Using `React.useHook` is not allowed. Use a direct import instead.',",
+			"});",
+		],
+	},
+	"e03-check-for-hooks": {
+		"prefix": "e03-check-for-hooks",
+		"body": [
+			"if (!node.callee.property.name.startsWith('use')) {",
+			"\treturn;",
+			"}",
+		],
+	},
+	"e04-fix-react": {
+		"prefix": "e04-fix-react",
+		"body": [
+			"(fixer) => {",
+			"\tconst hookName = node.callee.property.name;",
+			"",
+			"\treturn fixer.replaceText(node.callee, hookName);",
+			"},",
+		],
+	},
+	"e05-suggestion-object": {
+		"prefix": "e05-suggestion-object",
+		// prettier-ignore
+		"body": [
+			"{",
+			"\tdesc: 'Remove react namespace.',",
+			"},",
+		],
+	},
+}
